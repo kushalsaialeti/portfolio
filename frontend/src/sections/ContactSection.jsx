@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, Github, Linkedin, Instagram, FileText, ExternalLink, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, Instagram, FileText, ExternalLink, Send, CheckCircle, MapPin } from 'lucide-react';
 import SectionShell from '../components/SectionShell';
 import axios from 'axios';
 
