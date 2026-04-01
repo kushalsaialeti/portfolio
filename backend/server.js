@@ -54,7 +54,7 @@ function startKeepAliveJob() {
   }
 
   const frontendUrl = process.env.KEEP_ALIVE_FRONTEND_URL;
-  const backendUrl = process.env.KEEP_ALIVE_BACKEND_URL || process.env.RENDER_EXTERNAL_URL;
+  const backendUrl = process.env.KEEP_ALIVE_BACKEND_URL || process.env.RAILWAY_STATIC_URL || process.env.PORTFOLIO_URL;
 
   const targets = [
     { label: 'frontend', url: frontendUrl },
