@@ -1,5 +1,8 @@
 {
   "scripts": {
     "start": "cd backend && npm install && npm start"
+  },
+  "dependencies": {
+    "cloudinary": "^1.41.0"
   }
 }
