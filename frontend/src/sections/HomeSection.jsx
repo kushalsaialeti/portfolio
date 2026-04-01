@@ -324,8 +324,9 @@ export default function HomeSection({ section, content, onNavigate }) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-             <h1 className="text-[14vw] md:text-[7vw] font-black tracking-[-0.05em] uppercase leading-[0.85] text-[var(--text-primary)]">
-                {(profile?.name || 'KUSHAL SAI').split(' ').slice(0,2).join(' ')}<br/>{(profile?.name || 'ALETI').split(' ').slice(2).join(' ') || 'ALETI'}
+             <h1 className="text-[10vw] sm:text-[12vw] md:text-[7vw] font-black tracking-[-0.05em] uppercase leading-[0.85] text-[var(--text-primary)]">
+                {(profile?.name || 'KUSHAL SAI').split(' ').slice(0,2).join(' ')}<br />
+                {(profile?.name || 'ALETI').split(' ').slice(2).join(' ') || 'ALETI'}
              </h1>
           </motion.div>
 
@@ -333,7 +334,7 @@ export default function HomeSection({ section, content, onNavigate }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="mt-12 flex flex-wrap justify-center gap-4"
+            className="mt-8 md:mt-12 flex flex-wrap justify-center gap-3 md:gap-4"
           >
              {techStackLabels.map((label, idx) => (
                 <React.Fragment key={label}>
@@ -341,7 +342,7 @@ export default function HomeSection({ section, content, onNavigate }) {
                       whileHover={{ scale: 1.08, backgroundColor: '#27c93f', color: '#000000', borderColor: '#27c93f' }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => onNavigate?.('blogs')}
-                      className="px-8 py-3 rounded-[20px] border border-black/5 dark:border-white/10 bg-white dark:bg-white/[0.03] text-[10px] md:text-[13px] font-black uppercase tracking-[0.4em] text-black dark:text-white transition-all shadow-sm"
+                      className="px-5 py-2 md:px-8 md:py-3 rounded-[15px] md:rounded-[20px] border border-black/5 dark:border-white/10 bg-white dark:bg-white/[0.03] text-[8px] md:text-[13px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-black dark:text-white transition-all shadow-sm"
                    >
                       {label}
                    </motion.button>
@@ -356,7 +357,7 @@ export default function HomeSection({ section, content, onNavigate }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.3 }}
-            className="mt-8 text-sm md:text-base font-serif italic text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed opacity-80"
+            className="mt-6 md:mt-8 text-xs md:text-base font-serif italic text-[var(--text-secondary)] max-w-lg md:max-w-2xl mx-auto leading-relaxed opacity-80 px-4 md:px-0"
           >
             "{profile?.tagline || 'Building crisp, scalable web experiences.'}"
           </motion.p>
@@ -365,13 +366,13 @@ export default function HomeSection({ section, content, onNavigate }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4, duration: 0.8 }}
-            className="mt-16 flex flex-row gap-6 items-center"
+            className="mt-10 md:mt-16 flex flex-row gap-4 md:gap-6 items-center"
           >
              <motion.button 
                 whileHover={{ scale: 1.05, filter: 'brightness(0.9)' }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => onNavigate?.('projects')}
-                className="px-12 py-5 rounded-[24px] bg-black dark:bg-white text-white dark:text-black font-black uppercase text-[10px] tracking-[0.4em] transition-all shadow-[0_20px_40px_rgba(0,0,0,0.1)]"
+                className="px-8 py-4 md:px-12 md:py-5 rounded-[20px] md:rounded-[24px] bg-black dark:bg-white text-white dark:text-black font-black uppercase text-[8px] md:text-[10px] tracking-[0.3em] md:tracking-[0.4em] transition-all shadow-[0_20px_40px_rgba(0,0,0,0.1)]"
              >
                 VIEW PROJECTS
              </motion.button>
@@ -382,18 +383,18 @@ export default function HomeSection({ section, content, onNavigate }) {
                 rel="noreferrer"
                 whileHover={{ scale: 1.05, backgroundColor: '#27c93f', color: '#000000', borderColor: '#27c93f' }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-5 rounded-[24px] border border-black/10 dark:border-white/10 bg-transparent text-black dark:text-white font-black uppercase text-[10px] tracking-[0.4em] transition-all"
+                className="px-8 py-4 md:px-12 md:py-5 rounded-[20px] md:rounded-[24px] border border-black/10 dark:border-white/10 bg-transparent text-black dark:text-white font-black uppercase text-[8px] md:text-[10px] tracking-[0.3em] md:tracking-[0.4em] transition-all"
              >
                 RESUME
              </motion.a>
           </motion.div>
 
-          {/* MOBILE ISLANDS */}
-          <div className="order-3 mt-16 flex flex-col items-center md:hidden w-full">
+          {/* MOBILE ISLANDS - REMOVED FOR CLEANER HERO */}
+          {/* <div className="order-3 mt-16 flex flex-col items-center md:hidden w-full">
              {metaIslands.map((island) => (
                 <MetaIsland key={island.id} island={island} onNavigate={onNavigate} />
              ))}
-          </div>
+          </div> */}
        </div>
 
        {/* DESKTOP RIGHT OVERLAY */}

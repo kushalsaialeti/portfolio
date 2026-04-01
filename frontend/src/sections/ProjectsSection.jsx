@@ -96,7 +96,7 @@ export default function ProjectsSection({ section, content }) {
   const projects = content?.projects || [];
   return (
     <SectionShell id={section?.id} eyebrow={section?.eyebrow} title={section?.title} panelInfo={section?.panelInfo}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-16 px-4 md:px-0 items-start">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-10 mt-16 px-2 md:px-0 items-start">
         {projects.map((project, idx) => (
           <ProjectCard key={idx} project={project} />
         ))}

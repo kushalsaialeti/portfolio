@@ -39,8 +39,14 @@ export default function ContactSection({ section, content }) {
     { label: 'Direct Email', value: profile?.email || 'Loading...', icon: Mail, href: `mailto:${profile?.email}` },
     { label: 'Network', value: 'LinkedIn', icon: Linkedin, href: profile?.linkedin },
     { label: 'GitHub', value: 'Source Code', icon: Github, href: profile?.github },
-    { label: 'Phone', value: profile?.phone || 'Loading...', icon: Phone, href: `tel:${profile?.phone?.replace(/\s+/g, '')}` }
-  ].filter(c => c.href);
+    { label: 'Phone', value: profile?.phone || 'Loading...', icon: Phone, href: `tel:${profile?.phone?.replace(/\s+/g, '')}` },
+    { 
+      label: 'Location', 
+      value: profile?.location?.text || 'Bhimavaram, SRKR', 
+      icon: MapPin, 
+      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(profile?.location?.query || "SRKR Engineering College, Bhimavaram")}` 
+    }
+  ].filter(c => c.href || c.label === 'Location');
 
   const handleSubmit = async (e) => {
     e.preventDefault();

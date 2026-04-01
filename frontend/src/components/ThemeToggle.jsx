@@ -8,12 +8,10 @@ const ThemeToggle = () => {
 
     return (
         <motion.button
-            drag
-            dragConstraints={{ left: -window.innerWidth + 80, right: 0, top: 0, bottom: window.innerHeight - 80 }}
-            dragElastic={0.1}
-            whileDrag={{ scale: 1.2, cursor: 'grabbing' }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={toggleTheme}
-            className="fixed top-6 right-24 md:top-8 md:right-10 z-[200] p-3 rounded-xl bg-[var(--glass-bg)] border border-[var(--border)] shadow-[var(--shadow-lg)] backdrop-blur-xl hover:shadow-xl transition-all duration-300 group touch-none"
+            className="fixed bottom-8 right-8 z-[200] p-4 rounded-2xl bg-[var(--glass-bg)] border border-[var(--border)] shadow-[var(--shadow-2xl)] backdrop-blur-2xl hover:border-[var(--accent)]/30 transition-all duration-300 group touch-none"
             aria-label="Toggle Theme"
         >
             <div className="relative w-5 h-5 flex items-center justify-center">

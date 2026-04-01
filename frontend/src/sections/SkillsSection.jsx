@@ -65,7 +65,7 @@ export default function SkillsSection({ section, content }) {
 
   return (
     <SectionShell id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 mt-8">
+      <div className="grid gap-4 md:gap-8 grid-cols-2 md:grid-cols-2 mt-8">
         {entries.map(([key, value]) => (
           <SkillCategory key={key} label={key} items={value} />
         ))}
