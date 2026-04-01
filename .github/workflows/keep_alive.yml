@@ -15,5 +15,5 @@ jobs:
           # IMPORTANT: Replace these with your actual deployed domains!
           curl -s -L https://kushalsaialeti.vercel.app > /dev/null
           # Updated to Railway
-          curl -s -L https://YOUR-BACKEND.up.railway.app/api > /dev/null
+          curl -s -L https://kushalsaialeti.up.railway.app/api > /dev/null
           echo "--- ✅ PING SUCCESSFUL ---"
