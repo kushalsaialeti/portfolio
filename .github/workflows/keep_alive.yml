@@ -14,6 +14,6 @@ jobs:
           echo "--- 🔄 PINGING CLOUD SERVICES ---"
           # IMPORTANT: Replace these with your actual deployed domains!
           curl -s -L https://kushalsaialeti.vercel.app > /dev/null
-          # Updated to Railway
-          curl -s -L https://kushalsaialeti.up.railway.app/api > /dev/null
+          # Updated to Render
+          curl -s -L https://portfolio-backend.onrender.com/api > /dev/null
           echo "--- ✅ PING SUCCESSFUL ---"
