@@ -2,12 +2,18 @@ const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT) || 587,
-  secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+  port: parseInt(process.env.SMTP_PORT) || 465,
+  secure: process.env.SMTP_SECURE === 'true', 
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  tls: {
+    rejectUnauthorized: false // Bypasses certificate Handshake issues common on Render
+  },
+  connectionTimeout: 20000, 
+  greetingTimeout: 20000,
+  socketTimeout: 30000,
 });
 
 const sendOtpMail = async (email, otp) => {
@@ -26,7 +32,14 @@ const sendOtpMail = async (email, otp) => {
     `,
   };
 
-  return transporter.sendMail(mailOptions);
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('[MAIL_SUCCESS]: Code dispatched to', email);
+    return info;
+  } catch (error) {
+    console.error('[MAIL_ERROR]: Detailed failure log:', error);
+    throw error;
+  }
 };
 
 module.exports = { sendOtpMail };
